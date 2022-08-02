@@ -211,6 +211,7 @@ i++
 ## VScode 단축키
 
 @`단축키모음`
+
 행삭제 = Ctrl + X <br>
 복사 = Ctrl + C <br>
 아래 빈 줄 생성 = Ctrl + Enter <br>
