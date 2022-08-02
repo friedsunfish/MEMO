@@ -211,24 +211,24 @@ i++
 ## VScode 단축키
 
 @`단축키모음`
-행삭제 = Ctrl + X
-복사 = Ctrl + C
-아래 빈 줄 생성 = Ctrl + Enter
-위 빈 줄 생성 = Ctrl + Shift + Enter
-행 위로 이동 = Alt + ↑
-행 아래로 이동 = Alt + ↓
-다중선택으로 커서를 위에 추가 = Ctrl + Alt + ↑
-다중선택으로 커서를 아래에 추가 = Ctrl + Alt + ↓
-주석처리 = Ctrl + /
-선택부분 주석처리 = Alt + Shift + A
-라인 번호 찾기 = Ctrl + G
-프로젝트 내에서 파일 찾기 = Ctrl + P
-문자열 찾아 수정 = Ctrl + H
-프로젝트 전체 페이지 문자열 수정 = Ctrl + Shift + H
-새파일 열기 = Ctrl + N
-현재 파일 창닫기 = Ctrl + W 
-이전에 닫힌파일 다시열기 = Ctrl + Shift + T
-전체선택 = Ctrl + A
-자동 정렬 = Ctrl + A - Ctrl + K - Ctrl + F
-프로젝트 전체 페이지 문자열 수정 = Ctrl + Shift + H
+행삭제 = Ctrl + X <br>
+복사 = Ctrl + C <br>
+아래 빈 줄 생성 = Ctrl + Enter <br>
+위 빈 줄 생성 = Ctrl + Shift + Enter <br>
+행 위로 이동 = Alt + ↑ <br>
+행 아래로 이동 = Alt + ↓ <br>
+다중선택으로 커서를 위에 추가 = Ctrl + Alt + ↑ <br>
+다중선택으로 커서를 아래에 추가 = Ctrl + Alt + ↓ <br>
+주석처리 = Ctrl + / <br>
+선택부분 주석처리 = Alt + Shift + A <br>
+라인 번호 찾기 = Ctrl + G <br>
+프로젝트 내에서 파일 찾기 = Ctrl + P <br>
+문자열 찾아 수정 = Ctrl + H <br>
+프로젝트 전체 페이지 문자열 수정 = Ctrl + Shift + H <br>
+새파일 열기 = Ctrl + N <br>
+현재 파일 창닫기 = Ctrl + W  <br>
+이전에 닫힌파일 다시열기 = Ctrl + Shift + T <br>
+전체선택 = Ctrl + A <br> 
+자동 정렬 = Ctrl + A - Ctrl + K - Ctrl + F <br>
+프로젝트 전체 페이지 문자열 수정 = Ctrl + Shift + H <br>
 <hr>
