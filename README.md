@@ -75,6 +75,121 @@ ctrl + f 로 검색시 @검색어로 찾을수있게 기록
 논리 연산자 = &&(and) , ||(or) , !(not) <br>
 ...등
 
+@`식(expression)` = 연산자 + 피연산자 , 값이존재
+
+<hr>
+
+## 함수
+
+@`함수(function)` = 기능 = 기능을 구현한 코드집합  <br>
+사용하는이유 = 반복적인 코드작성을 피할수있음 (개발시간단축), 코드 간결화로 가독성높아짐, 쉬운유지보수  <br>
+합수호출(function call) = 기능부르기 = ex) 함수이름(파라미터1...) <br>
+
+@`파라미터(parameter)` = 매개변수 = 함수,메서드에서 입력값으로 제공되는 변수이름 <br>
+```javascript
+function WhatIsMean(parameter1,parameter2) {
+  return parameter1 + parameter2
+}
+```
+@`아규먼트(argument)` = 전달인자 = 함수,메서드에서 입력되는 값(Value)
+```javascript
+//function call 
+WhatIsMean(argument1,argument2)
+```
+
+<hr>
+
+## 문
+
+@`문(statement)` = 어떤 것을 수행하는 구문 단위 , 함수 기능을 구현한 코드로사용
+
+### 조건문
+
+@`if문` <br>
+@`else if문` <br>
+@`else문` <br>
+```javascript
+if(i=0){ //i가 0일경우 로직실행
+  //로직실행
+}
+else if(i<0){ //i가 0보다 작을경우 로직실행
+  //로직실행
+}
+else{ //그외 다른 모든경우 (0<i) 로직실행
+  //로직실행
+}
+```
+
+@`switch문` <br>
+```javascript
+switch (대상) {
+    case 조건값1: // 조건값1과 대상이 일치할경우 로직실행
+        //로직실행
+        break; // 생략가능
+    case 조건값2: // 조건값2과 대상이 일치할경우 로직실행
+        //로직실행
+        break; // 생략가능
+    default: // 생략가능 조건값1,2에 해당사항이없을경우
+        //로직실행
+}
+```
+
+### 반복문
+
+@`for문` 
+```javascript
+//i가 3보다작으면 실행후 i값 +1후 반복
+for(let i=0; i<3; i++;){ //(초기화; 조건식; 증감식)
+  //로직실행
+}
+```
+@`while문` 
+```javascript
+//i가 3보다작으면 실행후 i값 +1후 반복
+let=0; 
+while(i<3){ 
+  //로직실행 
+  i++
+}
+```
+
+@`do while문` 
+```javascript
+// 조건확인없이 1번실행후 조건확인
+let i = 1; 
+do { 
+//로직실행    
+i++
+} while(i < 3);
+```
+
+<hr>
+
+## javascript 특징
+
+1.서버가 아니라 클라이언트에서 실행됨 <br>
+2. 인터프리터 방식 <br>
+3. 지나치게 유연함 <br>
+4. script태그를 사용하여 함수정의 <br>
+
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
 <hr>
 <hr>
 <hr>
