@@ -71,10 +71,22 @@ OS(Window, Mac)에 의존적 , 코드 변경 시 재 컴파일 필요 <br>
 @`원시값(Primitives)` = 단순값 , 더이상 단순화 할수없는값 = 문자 , 숫자 , 불리언 , undefind , Null , symbol <br>
 * 문자
 * 숫자
-* 불리언(Boolean) = 거짓(false) = 0 , -0 , null , undefined , 빈문자열("") , NaN , false / 참(true) = false값이 아닐경우
+
+   - 정수 = 1 , 5 , 7 , -100
+   - 부동소수점 실수(float) = 1.1, 100.5
+   - 부동소수점 실수(double) = IEEE754 표준 부동소수점보다 더 정밀한 데이터 <br>
+   
+      + #### 부동소수점 연산 오차값 해결방법
+        - toFixed(num) = num의 자리수까지 반올림해 String으로 반환
+        - Math.round() = 반올림해주는 함수
+        - 기타 라이브러리 = Big.js , BigNumber.js , Decimal.js  
+        
+* 불리언(Boolean) = 참 or 거짓
+   - 거짓(false) = 0 , -0 , null , undefined , 빈문자열("") , NaN , false / 
+   - 참(true) = false값이 아닐경우
 * undefind = 빈값,없는값 = 변수선언후 값을 할당 받지않은 상태
 * Null = 빈값,없는값 = 의도적으로 값이 없다는 것을 명시
-* symbol
+* symbol 
 
 @`원시타입이아닌값(non-primitive value)` = 객체값, 참조값 = 배열,함수,객체 <br>
 
@@ -116,7 +128,6 @@ console.log(Number(myAge)); // 문자->숫자(명시적변환)
 Q. 왜 이렇게 복잡하게 임시로 생성했다가 제거하는지?  
 A. 객체는 프로퍼티와 메서드활용에 있어서 유용하지만 무겁고 느리다 반대로 원시타입은 가볍고 빠르지만 기능이없다 <br>
 그래서 원시타입의 가벼움을 유지하면서 객체의 기능도 활용하기위해 메서드를 호출할때만 임시로 객체로변환하는것 <br>
-
 
 <hr>
 
