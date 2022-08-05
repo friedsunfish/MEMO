@@ -71,7 +71,7 @@ OS(Window, Mac)에 의존적 , 코드 변경 시 재 컴파일 필요 <br>
 @`원시값(Primitives)` = 단순값 , 더이상 단순화 할수없는값 = 문자 , 숫자 , 불리언 , undefind , Null , symbol <br>
 * 문자
 * 숫자
-* 불리언
+* 불리언(Boolean) = 거짓(false) = 0 , -0 , null , undefined , 빈문자열("") , NaN , false / 참(true) = false값이 아닐경우
 * undefind = 빈값,없는값 = 변수선언후 값을 할당 받지않은 상태
 * Null = 빈값,없는값 = 의도적으로 값이 없다는 것을 명시
 * symbol
@@ -85,7 +85,7 @@ OS(Window, Mac)에 의존적 , 코드 변경 시 재 컴파일 필요 <br>
 ### 타입변환
 
 묵시적 = 자동변환 <br>
-명시적 = 자동변환 이외에 다른타입으로 변환시 사용 <br>
+명시적 = 강제 형변환 <br>
 * Number() = 문자 -> 숫자
 * String() = 숫자,불리언 -> 문자
 * Boolean() = 문자,숫자 -> 불리언
