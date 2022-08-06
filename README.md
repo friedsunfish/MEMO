@@ -292,8 +292,62 @@ BigInt연산
 * |" = 큰따옴표 표현
 * |' = 작은따옴표 표현
 
-### 문자열 리터럴
+### 문자열 접근
 
+charAt() = 문자접근 <br>
+```javascript
+let text = "Hello";
+text.charAt(num)
+//num번째 문자접근, 반환값은 num번째 문자
+
+```
+charCodeAt() <br>
+
+startsWith() = 특정문자로 시작하는지 확인 <br>
+```javascript
+let text = "Hello";
+text.startsWith(searchStr);
+text.startsWith(searchStr,position);
+// searchStar = 탐색할문자열 
+// position = 탐색시작할 위치
+// 반환값 = true or false
+```
+endsWith() = 특정문자로 끝나는지 확인 <br>
+```javascript
+let text = "Hello";
+text.endsWith(searchStr);
+text.endsWith(searchStr,position);
+// searchStar = 탐색할문자열 
+// position = 탐색시작할 위치
+// 반환값 = true or false
+```
+
+indexOf() = 문자열 검색<br>
+```javascript
+let text = "Hello";
+text.indexOf(searchStr);
+// searchStr = 탐색할 문자열
+// 반환값 = index
+// 일치하지않을경우 -1반환
+```
+
+lastIndexOf() <br>
+
+문자열[index] = 문자열접근 <br>
+```javascript
+let text = "Hello"
+text[0]; // "H"
+text[4]; // "O"
+// 해당 문자열 인덱스에 위치한 문자반환
+```
+
+더하기연산
+replace()
+replaceAll()
+toLocaleLowerCase()
+toLocaleUpperCase()
+toLowerCase()
+toUpperCase()
 
 <hr>
 
