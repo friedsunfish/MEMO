@@ -146,6 +146,7 @@ A. 객체는 프로퍼티와 메서드활용에 있어서 유용하지만 무겁
 객체이름.메소드 이름()
 
 <hr>
+ 
 ## 연산자
 
 @`연산자(operator)`  = 연산에 사용되는 기호 = +,-,* <br>
@@ -249,15 +250,12 @@ i++
 
 <hr>
 
-## 상수와 리터럴 
+## 숫자 
 
 @`상수(constant)` = 코드에서 변하지 않는 변수(메모리 위치)
-
-### 리터럴
-
 @`리터럴(literal)` = 코드에서 변하지 않는 데이터(메모리위치 안의 값)
 
-#### 숫자 리터럴
+### 숫자 리터럴
 
 - 정수 리터럴
    * 10진수 또는 16진수
@@ -268,9 +266,28 @@ i++
    * 실수표기 -> 10.1 , 11.1 , 0.11
    * 지수표기 -> 2e2 , 2e-2
    
-- Infinity(무한)
-- NaN(Not a Number)
+- Infinity(무한) = 무한대를 나타내는 숫자값
+- NaN(Not a Number) = 숫자가 아님을 나타내는 값
 - 특수값
+
+### BigInt
+BigInt = Number의 최대값보다 큰 정수표현
+* Math 객체의 메서드와 함께 사용불가
+* 연산에서 Number와 함께 사용불가
+
+BigInt연산
+* +,*,-,**,%를 이용해서 연산가능
+* BigInt 객체를 이용
+
+### 변환,확인
+
+@`변환`
+Number.parseInt(num) = 정수로 변환하는 함수 / 반환타입은 Number
+Number.parseFloat(num) = 실수로 변환하는 함수 / 반환타입은 Number
+
+@`확인`
+Number.isInteger(num) = 정수인지 판별하는 함수 / 반환값은 Boolean(true, false)
+Number.isNaN(num) = NaN인지 판별하는 함수 / 반환값은 Boolean(true, false)
 
 <hr>
 <hr>
