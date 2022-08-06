@@ -282,12 +282,12 @@ BigInt연산
 ### 변환,확인
 
 @`변환`
-Number.parseInt(num) = 정수로 변환하는 함수 / 반환타입은 Number
-Number.parseFloat(num) = 실수로 변환하는 함수 / 반환타입은 Number
+Number.parseInt(num) = 정수로 변환하는 함수 / 반환타입은 Number <br>
+Number.parseFloat(num) = 실수로 변환하는 함수 / 반환타입은 Number <br>
 
 @`확인`
-Number.isInteger(num) = 정수인지 판별하는 함수 / 반환값은 Boolean(true, false)
-Number.isNaN(num) = NaN인지 판별하는 함수 / 반환값은 Boolean(true, false)
+Number.isInteger(num) = 정수인지 판별하는 함수 / 반환값은 Boolean(true, false) <br>
+Number.isNaN(num) = NaN인지 판별하는 함수 / 반환값은 Boolean(true, false) <br>
 
 <hr>
 <hr>
