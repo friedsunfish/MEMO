@@ -354,32 +354,28 @@ let text = 123 + "" // "123" (type string)
 let text2 = "안" + "녕" // "안녕" (type string)
 ```
 
-replace() = 문자열변경
+replace() = 바꿀문자열 선택후 가장첫번째 문자를 변경
 ```javascript
 let text = "Hello World"
 let text2 = text.replace("l","L"); // "HeLlo World"
-// 바꿀문자열 선택후 가장첫번째 문자를 변경
 ```
 
-replaceAll()
+replaceAll() = 바꿀문자열 선택후 해당되는 모든 문자변경
 ```javascript
 let text = "Hello World"
 let text2 = text.replaceAll("l","L"); // "HeLLo WorLd" 
-// 바꿀문자열 선택후 해당되는 모든 문자변경
 ```
 
-toLowerCase()
+toLowerCase() = 모든 대문자를 소문자로 변경
 ```javascript
 let text = "HeLlo";
 text.toLowerCase(); // "hello"
-//모든 대문자를 소문자로 변경
 ```
 
-toUpperCase()
+toUpperCase() = 모든 소문자를 대문자로 변경
 ```javascript
 let text = "HeLlo";
 text.toUpperCase(); // "HELLO"
-//모든 소문자를 대문자로 변경
 ```
 
 toLocaleLowerCase() , toLocaleUpperCase() <br>
