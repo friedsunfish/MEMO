@@ -322,16 +322,21 @@ text.endsWith(searchStr,position);
 // 반환값 = true or false
 ```
 
-indexOf() = 문자열 검색<br>
+indexOf() = 문자열 검색(처음 나오는값) <br>
 ```javascript
 let text = "Hello";
 text.indexOf(searchStr);
 // searchStr = 탐색할 문자열
-// 반환값 = index
-// 일치하지않을경우 -1반환
+// 반환값 = 처음으로 등장하는 index / 없다면 -1
 ```
 
-lastIndexOf() <br>
+lastIndexOf() = 문자열 검색(마지막으로 나오는값) <br>
+```javascript
+let text = "Hello";
+text.lastIndexOf(searchStr);
+// searchStr = 탐색할 문자열
+// 반환값 = 마지막으로 등장하는 index / 없다면 -1
+```
 
 문자열[index] = 문자열접근 <br>
 ```javascript
@@ -341,13 +346,45 @@ text[4]; // "O"
 // 해당 문자열 인덱스에 위치한 문자반환
 ```
 
+### 문자열 변경
+
 더하기연산
-replace()
+```javascript
+let text = 123 + "" // "123" (type string)
+let text2 = "안" + "녕" // "안녕" (type string)
+```
+
+replace() = 문자열변경
+```javascript
+let text = "Hello World"
+let text2 = text.replace("l","L"); // "HeLlo World"
+// 바꿀문자열 선택후 가장첫번째 문자를 변경
+```
+
 replaceAll()
-toLocaleLowerCase()
-toLocaleUpperCase()
+```javascript
+let text = "Hello World"
+let text2 = text.replaceAll("l","L"); // "HeLLo WorLd" 
+// 바꿀문자열 선택후 해당되는 모든 문자변경
+```
+
 toLowerCase()
+```javascript
+let text = "HeLlo";
+text.toLowerCase(); // "hello"
+//모든 대문자를 소문자로 변경
+```
+
 toUpperCase()
+```javascript
+let text = "HeLlo";
+text.toUpperCase(); // "HELLO"
+//모든 소문자를 대문자로 변경
+```
+
+toLocaleLowerCase() , toLocaleUpperCase() <br>
+각각 toLowerCase(), toUpperCase()와 유사하게 동작하지만 대소문자 매핑이 유니코드의 <br>
+지본 대소문자 매핑을 따르지않는 터키어같은 일부 로케일에 대해서 다를수있음 <br>
 
 <hr>
 
