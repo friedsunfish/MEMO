@@ -382,6 +382,35 @@ toLocaleLowerCase() , toLocaleUpperCase() <br>
 각각 toLowerCase(), toUpperCase()와 유사하게 동작하지만 대소문자 매핑이 유니코드의 <br>
 지본 대소문자 매핑을 따르지않는 터키어같은 일부 로케일에 대해서 다를수있음 <br>
 
+### 문자열 병합
+
+더하기연산
+```javascript
+let text1 = "Hello"
+let text2 = "World"
+let plus = text + " " + text2 // "Hello World"
+```
+concat() = 배열이나 값을 합쳐서 반환
+```javascript
+let text1 = "Hello"
+let text2 = "World"
+text1.concat(text2); // "HelloWorld"
+
+let arr1 = ["H" , "e" , "l"]
+let arr2 = ["l" , "o" , "w"]
+arr1.concat(arr2) // H,e,l,l,o,w (type object)
+arr1.concat(arr2,"2","3")
+```
+join() = 배열을 하나의 문자열로 합쳐서 반환
+```javascript
+let arr = ["H", "e", "l", "l", "o", "w"];
+let str = arr.join(); // H,e,l,l,o,w
+구분자 선택가능 선택안할시 기본 = ,
+띄어쓰기없이 = ""
+띄어쓰기 = " "
+다른구분자로 구분가능
+```
+
 <hr>
 
 ### 변환,확인
