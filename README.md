@@ -413,6 +413,34 @@ let str = arr.join(); // H,e,l,l,o,w
 
 <hr>
 
+## 배열
+```javascript
+let arr = [] // 대괄호로 배열 표현
+let arr2 = ["문자" , 2] // 문자, 숫자 혼합가능
+arr.length // 2 (문자열의 길이)
+arr2[1] // 2 (인덱스접근)
+```
+split() = 문자열을 구분자로 분리해서 배열로 반환
+```javascript
+let text = "a_b_c";
+let arr = text.split("_");
+console.log(arr); // [ 'a', 'b', 'c' ]
+```
+Array.from() = 문자들을 분리해서 배열로 반환하는함수
+```javascript
+let text = "abc";
+let arr = Array.from(text);
+console.log(arr); // [ 'a', 'b', 'c' ]
+```
+스프레드 연산자(...) = 문자열을 분리해서 배열로 반환하는 연산
+```javascript
+let text = "abc";
+let arr = [...text];
+console.log(arr); // [ 'a', 'b', 'c' ]
+```
+
+<hr>
+
 ### 변환,확인
 
 @`변환`
