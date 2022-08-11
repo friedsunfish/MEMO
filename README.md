@@ -459,6 +459,15 @@ Number.isNaN(num) = NaN인지 판별하는 함수 / 반환값은 Boolean(true, f
 <hr>
 <hr>
 <hr>
+
+ json-server로 fake api 구축
+ 
+ 설치방법
+ 터미널에 npm install -g json-server
+ 
+ 실행방법
+ 터밀널에 json-server --watch db.json
+
 <hr>
 <hr>
 <hr>
