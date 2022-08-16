@@ -452,6 +452,54 @@ Number.isInteger(num) = 정수인지 판별하는 함수 / 반환값은 Boolean(
 Number.isNaN(num) = NaN인지 판별하는 함수 / 반환값은 Boolean(true, false) <br>
 
 <hr>
+
+## 동기와 비동기
+ 
+동기 = 동시에일어나는 = 요청과 동시에 결과가 동시에 일어남  <br>
+-> 설계간단,직관적 but 결과가 주어질때까지 대기 <br>
+비동기 = 동시에 일어나지않는 = 요청과 동시에 결과가 동시에 일어나지않음 <br>
+-> 동기보다 복잡 but 결과가 주어지는데 시간이걸리더라도 다른작업을할수있음 효율적 <br>
+
+커피주문후 나올때까지 줄을서서 기다림 = 동기 <br>
+커피주문후 진동벨이울리면 가지러감 = 비동기 <br>
+
+### 비동기 사용방법 3가지
+
+Callback 함수 = 함수를 실행후 이후에 실행되는 함수, 다른함수에 파라미터로 넘겨지는 함수 <br>
+```javascript
+//사용예시
+//함수선언
+function sum(num1, num2, callback){
+  var result = num1 + num2;
+  callback(result);
+}
+//함수호출
+sum(10, 20, function(result){ 
+  console.log(result);
+});
+```
+
+Promise = 비동기처리에 사용되는 객체 , 비동기실행결과를 반환(성공 or 실패)   <br>
+promise에서 사용되는 2가지 <br>
+then() = 결과값과 로직 담은것을 콜백함수로 받음 <br>
+catch() = 예외처리하는 로직을 콜백함수로 받음 <br>
+
+```javascript
+//사용예시
+//함수선언
+function sum(num1, num2){
+  return new Promise((resolve,reject)=>{
+    if(num1 == null || num2 == null) reject(new Error("num1 또는 num2 null 값"));
+    else resolve(num1 + num2);
+  });
+}
+//함수호출
+sum(10,20)
+  .then((result)=>console.log("성공 ::: 결과는? "+result))
+  .catch((error)=> console.log("실패 ::: "+error));
+
+```
+
 <hr>
 <hr>
 <hr>
