@@ -480,9 +480,15 @@ sum(10, 20, function(result){
 ```
 
 Promise = 비동기처리에 사용되는 객체 , 비동기실행결과를 반환(성공 or 실패)   <br>
-promise에서 사용되는 2가지 <br>
-then() = 결과값과 로직 담은것을 콜백함수로 받음 <br>
-catch() = 예외처리하는 로직을 콜백함수로 받음 <br>
+
+pedding(대기) = 초기상태 <br>
+Fullfilled(이행) = 성공 <br>
+Rejected(거부) = 실패 <br>
+then() = 결과값과 로직 담은것을 콜백함수로 받음 (resolve시실행)<br>
+catch() = 예외처리하는 로직을 콜백함수로 받음 (reject시실행)<br>
+resolve, reject = 인수를 전달하는 실행함수 <br>
+resolve = 비동기 작업 종료시 resolve 호출하여 실행 <br>
+reject = 비동기 작업 중간 오류 발생 시 reject호출하여 실행
 
 ```javascript
 //사용예시
@@ -498,6 +504,29 @@ sum(10,20)
   .then((result)=>console.log("성공 ::: 결과는? "+result))
   .catch((error)=> console.log("실패 ::: "+error));
 
+```
+
+### async / await
+
+async / await = 비동기처리위해 사용, Promise단점보안, Callback hell해결
+async = 동기
+await = 기다리다
+try ~ catch = 에러 발생시 핸들링
+
+```javascript
+const sum2 = async (num1, num2) => {
+  const promise = new Promise((resolve, reject)=>{
+    if(num1>num2) resolve(num1-num2);
+    else resolve(num2 - num1);
+  });
+  try{
+    const result = await promise;
+    console.log(result);
+  }catch(error){
+    console.error(error);
+  }
+}
+sum2(10,20);
 ```
 
 <hr>
