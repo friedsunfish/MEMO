@@ -441,6 +441,26 @@ console.log(arr); // [ 'a', 'b', 'c' ]
 
 <hr>
 
+## 템플릿 리터럴(Template literals)
+템플릿 리터럴 = 내장된 표현식을 허용하는 문자열 리터럴
+
+### 개행
+```javascript
+let text = "hello\nWorld";
+=
+let text = `hello
+World`;
+```
+
+### 표현식사용
+```javascript
+let text = "hello World";
+let textType = typeof text;
+console.log(`${text} 타입은 ?? ${textType}`);
+```
+
+<hr>
+
 ### 변환,확인
 
 @`변환`
