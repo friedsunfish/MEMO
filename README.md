@@ -268,26 +268,6 @@ const cars = ["Saab","Volvo","BMW"]
 
 <hr>
 
-## 함수
-
-@`함수(function)` = 기능 = 기능을 구현한 코드집합  <br>
-사용하는이유 = 반복적인 코드작성을 피할수있음 (개발시간단축), 코드 간결화로 가독성높아짐, 쉬운유지보수  <br>
-합수호출(function call) = 기능부르기 = ex) 함수이름(파라미터1...) <br>
-
-@`파라미터(parameter)` = 매개변수 = 함수,메서드에서 입력값으로 제공되는 변수이름 <br>
-```javascript
-function WhatIsMean(parameter1,parameter2) {
-  return parameter1 + parameter2
-}
-```
-@`아규먼트(argument)` = 전달인자 = 함수,메서드에서 입력되는 값(Value)
-```javascript
-//function call 
-WhatIsMean(argument1,argument2)
-```
-
-<hr>
-
 ## 문
 
 @`문(statement)` = 어떤 것을 수행하는 구문 단위 , 함수 기능을 구현한 코드로사용
@@ -606,9 +586,104 @@ lastIndexOf() = 배열 검색후 가장첫번째 요소 위치값 반환 없으�
 ### 배열정렬
 sort() = 배열 정렬 <br>
 ```javascript
+let arr = [1, 2, 3, 4, 10, 11];
+console.log(arr.sort()); // [ 1, 10, 11, 2, 3, 4 ]
+// sort는 기본적으로 유니코드기준 정렬방식이다
+// 그래서 숫자 크기로 오름차순, 내림차순으로 하기위해서는 다음과같이 해야한다
 
+//오름차순 (최소값부터 정렬)
+let num_sort = arr.sort(function (x, y) {
+  return x - y;
+});
+console.log(num_sort); // [ 1, 2, 3, 4, 10, 11 ]
+
+//내림차순 (최대값부터 정렬)
+let num_sort2 = arr.sort(function (x, y) {
+  return y - x;
+});
+console.log(num_sort2); // [ 11, 10, 4, 3, 2, 1 ]
 ```
 reverse() = 배열 거꾸로 뒤집기 <br>
+```javascript
+let arr = [1, 2, 3, 10, 5, 11];
+console.log(arr.reverse()); // [ 11, 5, 10, 3, 2, 1 ]
+
+//응용으로 오름차순으로 정렬한 배열에 .reverse를 쓰면
+// 반대로 출력되기때문에 내림차순이된다
+
+let arr2 = [1, 2, 3, 10, 5, 11];
+arr2
+  .sort(function (x, y) {
+    return x - y;
+  })
+  .reverse();
+console.log(arr2); // [ 11, 10, 4, 3, 2, 1 ]
+```
+<hr>
+
+## 함수
+
+@`함수(function)` = 기능 = 기능을 구현한 코드집합  <br>
+사용하는이유 = 반복적인 코드작성을 피할수있음 (개발시간단축), 코드 간결화로 가독성높아짐, 쉬운유지보수  <br>
+합수호출(function call) = 기능부르기 = ex) 함수이름(파라미터1...) <br>
+
+@`파라미터(parameter)` = 매개변수 = 함수,메서드에서 입력값으로 제공되는 변수이름 <br>
+```javascript
+function WhatIsMean(parameter1,parameter2) {
+  return parameter1 + parameter2
+}
+```
+@`아규먼트(argument)` = 전달인자 = 함수,메서드에서 입력되는 값(Value)
+```javascript
+//function call 
+WhatIsMean(argument1,argument2)
+```
+
+### 순회함수(method)
+
+@`순회함수(method)` = 배열의 값을 읽기 위한 함수 , 배열 순회하면서 복사,수정,통계등 산출가능
+
+- for문
+```javascript
+let arr = ["가", "나", "다"];
+for (let i = 0; i < arr.length; i++) {
+  console.log(arr[i]); 
+}
+// 가
+// 나
+// 다
+```
+- Array.forEach
+```javascript
+// 구문 = array.forEach(callback(currentvalue, index, array), thisArg)
+// 3가지 매개변수를 받음
+// 1.currentValue = 처리할 현재 요소 2.index = 처리할 현재 요소의 인덱스 3.array = forEach()를 호출한 배열
+// thisArg = callback을 실행할 때 this로 사용할 값
+
+let arr = ["가", "나", "다"];
+arr.forEach(function (el, index) {
+  console.log(`currentValue = ${el} , index = ${index}`);
+});
+
+// currentValue = 가 , index = 0
+// currentValue = 나 , index = 1
+// currentValue = 다 , index = 2
+```
+- Array.map
+```javascript
+// 구문 = array.forEach(callback(currentvalue, index, array), thisArg)
+// 3가지 매개변수를 받음
+// 1.currentValue = 처리할 현재 요소 2.index = 처리할 현재 요소의 인덱스 3.array = forEach()를 호출한 배열
+// thisArg = callback을 실행할 때 this로 사용할 값
+
+
+```
+- Array.filter
+```javascript
+```
+- Array.reduce
+```javascript
+```
 
 <hr>
 
