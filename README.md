@@ -545,13 +545,57 @@ console.log(arr); // [ 'a', 'b', 'c' ]
 ```
 ### 배열요소 편집
 push() = 배열끝에 추가 <br>
+```javascript
+let arr = [1, 2, 3];
+arr.push(4);
+console.log(arr); // [ 1, 2, 3, 4 ]
+```
 pop() = 배열 마지막 요소 제거 <br>
+```javascript
+let arr = [1, 2, 3];
+arr.pop();
+console.log(arr); // [ 1, 2 ]
+```
 unshift() = 배열 앞에 추가 <br>
+```javascript
+let arr = [1, 2, 3];
+arr.unshift(0);
+console.log(arr); // [ 0, 1, 2, 3 ]
+```
 shift() = 배열 첫번째요소 제거 <br>
+```javascript
+let arr = [1, 2, 3];
+arr.shift();
+console.log(arr); // [ 2, 3 ]
+```
 slice() = 시작과 끝범위 요소를 잘라 새로운 배열 생성 <br>
+```javascript
+// slice(begin, end)
+let arr = [1, 2, 3, 4, 5];
+let result_slice1 = arr.slice(-2); // 한개만기입해서 시작지점 뒤에서 2번째부터 끝까지
+console.log(result_slice1); // [ 4, 5 ]
+
+let result_slice2 = arr.slice(2); // 한개만기입해서 시작지점 3번(index 2)부터 끝까지
+console.log(result_slice2); // [ 3, 4, 5 ]
+
+let result_slice3 = arr.slice(1, 4); // 2번째(index 1)부터 4번째(index 3)까지
+console.log(result_slice3); // [ 2, 3, 4 ]
+
+let result_slice4 = arr.slice(2, -1); // 2번째(index 1)부터 뒤에서 1번째까지
+console.log(result_slice4); // [ 3, 4 ]
+```
 splice() = 일정 범위요소 삭제, 새로운 요소추가 <br>
+```javascript
+// splice(start, delCnt, element)
+// start = 변경시자작점 delCnt = 삭제할 요소의수 element = 추가할요소
+// 배열을 직접 수정한다 새로운 배열 반환x
+let arr = ["가", "나", "다"];
+arr.splice(1, 0, "거"); //시작=index 1 요소삭제=0 추가="거"
+console.log(arr); // [ '가', '거', '나', '다' ]
+```
 concat() = 합치는 기능 <br>
 -문자열 병합참고 <br>
+
 join() = 배열 합쳐서 문자열로 반환 , 구분자이용가능 <br>
 -문자열 병합참고 <br>
 
