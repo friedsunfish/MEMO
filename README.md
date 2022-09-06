@@ -147,7 +147,7 @@ let info = {
   weight: "50kg", // 숫자+문자
   interests: ["music", "movie"], // 배열
   desc: function () { // 함수
-    console.log("description");
+    return "description";
   },
 };
 ```
@@ -163,7 +163,7 @@ console.log(info["name"]); // JS
 ### 객체 메소드 참조방식
 ```javascript
 // 객체이름.메소드 이름()
-console.log(info.desc());
+console.log(info.desc()); // description
 ```
 <hr>
 
