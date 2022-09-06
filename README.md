@@ -131,20 +131,40 @@ A. 객체는 프로퍼티와 메서드활용에 있어서 유용하지만 무겁
 
 <hr>
 
-## 객체
+## 객체 리터럴
 
-@`객체(Object)` = 물체 = 키(key)와 값(value)의 집합
+### 객체
+@`객체(object)` = 프로퍼티의 집합
+@`프로퍼티(property)` = 키와 값으로 구성된 객체가 가지고있는 속성
+@`키(key)` = 속성명 // 문자열형태의 이름
+@`값(value)`= 속성값 // 문자열,숫자,배열,객체,함수 등 
+
+```javascript
+// 객체 예시
+let info = {
+  age: 20, // 숫자
+  name: "JS", // 문자
+  weight: "50kg", // 숫자+문자
+  interests: ["music", "movie"], // 배열
+  desc: function () { // 함수
+    console.log("description");
+  },
+};
+```
 
 ### 객체프로퍼티 참조방식
+```javascript
+//객체이름.프로퍼티 이름 <br>
+console.log(info.age); // 20
 
-@`프로퍼티(property)` = 객체가 가지고있는 속성
-
-객체이름.프로퍼티 이름 <br>
-객체이름["프로퍼티 이름"] <br>
-
+//객체이름["프로퍼티 이름"] <br>
+console.log(info["name"]); // JS
+```
 ### 객체 메소드 참조방식
-객체이름.메소드 이름()
-
+```javascript
+// 객체이름.메소드 이름()
+console.log(info.desc());
+```
 <hr>
 
 ## 연산자
@@ -627,16 +647,47 @@ console.log(arr2); // [ 11, 10, 4, 3, 2, 1 ]
 사용하는이유 = 반복적인 코드작성을 피할수있음 (개발시간단축), 코드 간결화로 가독성높아짐, 쉬운유지보수  <br>
 합수호출(function call) = 기능부르기 = ex) 함수이름(파라미터1...) <br>
 
-@`파라미터(parameter)` = 매개변수 = 함수,메서드에서 입력값으로 제공되는 변수이름 <br>
+@`파라미터(parameter)` = @`매개변수` = 함수,메서드에서 입력값으로 제공되는 변수이름 <br>
 ```javascript
+//함수선언 예시
 function WhatIsMean(parameter1,parameter2) {
   return parameter1 + parameter2
 }
 ```
-@`아규먼트(argument)` = 전달인자 = 함수,메서드에서 입력되는 값(Value)
+@`아규먼트(argument)` = @`전달인자` = 함수,메서드에서 입력되는 값(Value)
 ```javascript
-//function call 
+//function call / 함수호출예시 
 WhatIsMean(argument1,argument2)
+```
+
+### 화살표 함수(arrow function) 
+@`화살표 함수` = 간결하게 일부를 생략한 함수작성방법 
+```javascript
+// 일반적인 함수선언
+function sum(x, y) {
+  return x + y; // 3
+}
+console.log(sum(1, 2));
+
+// 화살표함수
+// function 제거, 매개변수옆에 =>추가후 return삭제
+let sum = (x, y) => x + y;
+console.log(sum(1, 2)); // 3
+```
+
+### 내부 함수 
+@`내부함수` = 함수 안에 다른함수를 정의하여 사용하는것 / 어디서든 호출가능
+```javascript
+// 일반적인 함수선언
+function sum(x, y) {
+  return x + y;
+}
+
+// 내부함수사용
+function sumnum(num1, num2) {
+  return sum(num1, num2);
+}
+console.log(sumnum(10, 20));
 ```
 
 ### 순회함수(method)
@@ -653,13 +704,12 @@ for (let i = 0; i < arr.length; i++) {
 // 나
 // 다
 ```
-- Array.forEach
+- Array.forEach = 배열요소 각각에 주어진 함수를 실행(배열변경x 새로운배열반환x) <br>
+// 구문 = array.forEach(callback(currentvalue, index, array), thisArg) <br>
+// 3가지 매개변수를 받음 <br>
+// 1.currentValue = 처리할 현재 요소 2.index = 처리할 현재 요소의 인덱스 3.array = forEach()를 호출한 배열 <br>
+// thisArg = callback을 실행할 때 this로 사용할 값 <br>
 ```javascript
-// 구문 = array.forEach(callback(currentvalue, index, array), thisArg)
-// 3가지 매개변수를 받음
-// 1.currentValue = 처리할 현재 요소 2.index = 처리할 현재 요소의 인덱스 3.array = forEach()를 호출한 배열
-// thisArg = callback을 실행할 때 this로 사용할 값
-
 let arr = ["가", "나", "다"];
 arr.forEach(function (el, index) {
   console.log(`currentValue = ${el} , index = ${index}`);
@@ -669,22 +719,60 @@ arr.forEach(function (el, index) {
 // currentValue = 나 , index = 1
 // currentValue = 다 , index = 2
 ```
-- Array.map
+- Array.map = 배열내 모든요소 각각에 주어진함수를 호출한결과로 새배열을 만듬(원래값 변경x ,새로운배열반환) <br>
+// 구문 = array.map(callback(currentvalue, index, array), thisArg) <br>
+// 3가지 매개변수를 받음 <br>
+// 1.currentValue = 처리할 현재 요소 2.index = 처리할 현재 요소의 인덱스 3.array = forEach()를 호출한 배열 <br>
+// thisArg = callback을 실행할 때 this로 사용할 값 <br>
 ```javascript
-// 구문 = array.forEach(callback(currentvalue, index, array), thisArg)
-// 3가지 매개변수를 받음
-// 1.currentValue = 처리할 현재 요소 2.index = 처리할 현재 요소의 인덱스 3.array = forEach()를 호출한 배열
-// thisArg = callback을 실행할 때 this로 사용할 값
+let arr = [1, 2, 3];
+let arr2 = arr.map(function (x) {
+  return x * 2;
+});
+console.log(arr2); // [ 2, 4, 6 ]
 
-
+//화살표함수
+let arr = [1, 2, 3];
+let arr2 = arr.map((x) => x * 2);
+console.log(arr2); // [ 2, 4, 6 ]
 ```
-- Array.filter
+- Array.filter = 특정요구사항을 만족하는 요소들로만 새로운 배열생성(해당안될경우 버림)
 ```javascript
-```
-- Array.reduce
-```javascript
-```
+let arr = ["가", "가나다", "나다라", "다라"];
+let filterd_arr = arr.filter(function (x) {
+  return x.length > 2;
+});
+console.log(filterd_arr); // [ '가나다', '나다라' ]
 
+//화살표함수
+let arr = ["가", "가나다", "나다라", "다라"];
+let filterd_arr = arr.filter((x) => x.length > 2);
+console.log(filterd_arr); // [ '가나다', '나다라' ]
+```
+- Array.reduce = 배열의 각요소를 순회하면서 callback함수를 실행하여 남는값을 누적하여 하나의결과값을 반환함 <br>
+// 구문 = arr.reduce(callback(accumulator, currentValue, index, array), initialValue) <br>
+// 1. accumulator = 누적되는값 , initialValue를 설정할경우 초기값은 initialValue값이된다 <br>
+// 2. currentValue = 현재 배열의 요소 / 3. initialValue = 최초호출시 accumulator의 초기값, 설정하지않으면 배열의첫번째요소가 accumulator가된다 <br>
+// 4. index(생략가능) = 현재배열요소의 index값 / 5. array(생략가능) = reduce함수를 호출한 배열 <br> 
+```javascript
+// initialValue값을 0으로 설정시
+let arr = [1, 2, 3, 4];
+let sum = arr.reduce((total, val) => total + val, 0);
+console.log(sum); // 0+1+2+3+4
+
+// initialValue값을 설정하지않을시
+let arr = [1, 2, 3, 4];
+let sum = arr.reduce((total, val) => total + val);
+console.log(sum); // 1+2+3+4
+
+// reduce응용 최대값구하기
+arr.reduce(function (total, val) {
+  return total > val ? total : val;
+});
+
+//화살표함수
+arr.reduce((total, val) => (total > val ? total : val));
+```
 <hr>
 
 ## 템플릿 리터럴(Template literals)
