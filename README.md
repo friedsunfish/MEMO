@@ -131,108 +131,6 @@ A. 객체는 프로퍼티와 메서드활용에 있어서 유용하지만 무겁
 
 <hr>
 
-## 객체 리터럴
-
-### 객체
-@`객체(object)` = 프로퍼티의 집합 <br>
-@`프로퍼티(property)` = 키와 값으로 구성된 객체가 가지고있는 속성 <br>
-@`키(key)` = 속성명 // 문자열형태의 이름 <br>
-@`값(value)`= 속성값 // 문자열,숫자,배열,객체,함수 등 <br>
-@`메소드(method)` = 객체의 속성 값으로 담겨진 함수
-
-```javascript
-// 객체 예시
-let info = {
-  age: 20, // 숫자
-  name: "JS", // 문자
-  weight: "50kg", // 숫자+문자
-  interests: ["music", "movie"], // 배열
-  desc: function () { // 함수(메소드)
-    return "description";
-  },
-};
-```
-
-### 객체프로퍼티 참조방식
-@`점표기법` = 객체이름.프로퍼티 이름
-```javascript
-console.log(info.age); // 20
-```
-@`대괄호표기법` = 객체이름["프로퍼티 이름"] 
-```javascript
-console.log(info["name"]); // JS
-```
-### 객체 메소드 참조방식
-점표기법으로만 접근가능 대괄호표기법 사용불가
-```javascript
-// 객체이름.메소드 이름()
-console.log(info.desc()); // description
-```
-💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥
-### 프로퍼티(property)열거
-- 객체 순회
-- 순서 미보장
-- length, index없음
-- Object.key(), for-in문, Object.values(), Object.entries()
-
-```javascript
-// 참고용 공통 객체
-let info = {
-  age: 20, // 숫자
-  name: "JS", // 문자
-  weight: "50kg", // 숫자+문자
-  interests: ["music", "movie"], // 배열
-  desc: function () { // 함수(메소드)
-    return "description";
-  },
-};
-```
-Object.key() = 객체에서 key를 배열로 반환
-```javascript
-console.log(Object.keys(info)); // [ 'age', 'name', 'weight', 'interests', 'desc' ]
-```
-Object.values() = 객체에서 value를 배열로 반환
-```javascript
-console.log(Object.values(info)); // [ 20, 'JS', '50kg', [ 'music', 'movie' ], [Function: desc] ]
-```
-Object.entries() = 객체에서 key와 value를 배열로 반환 (key,value를 대괄호로 묶어서 배열로반환)
-```javascript
-console.log(Object.entries(info)); 
-/** 
-[
-  [ 'age', 20 ],
-  [ 'name', 'JS' ],
-  [ 'weight', '50kg' ],
-  [ 'interests', [ 'music', 'movie' ] ],
-  [ 'desc', [Function: desc] ]
-]
-*/
-```
-for-in문 = 객체의 프로퍼티를 순회하는 반복문
-```javascript
-for (let i in info) {
-  console.log(i);
-}
-/**
-age
-name
-weight
-interests
-desc
- */
-```
-```javascript
-for (let i in info) {
-  console.log(info[i]);
-}
-/**
-20
-JS
-50kg
-[ 'music', 'movie' ]
-[Function: desc]
- */
-```
 <hr>
 
 ## 연산자
@@ -582,6 +480,35 @@ let str = arr.join(); // H,e,l,l,o,w
 띄어쓰기 = " "
 다른구분자로 구분가능
 ```
+<hr>
+
+## 템플릿 리터럴(Template literals)
+템플릿 리터럴 = 내장된 표현식을 허용하는 문자열 리터럴
+
+### 개행
+```javascript
+let text = "hello\nWorld";
+=
+let text = `hello
+World`;
+```
+
+### 표현식사용
+```javascript
+let text = "hello World";
+let textType = typeof text;
+console.log(`${text} 타입은 ?? ${textType}`);
+```
+
+### 변환,확인
+
+@`변환`
+Number.parseInt(num) = 정수로 변환하는 함수 / 반환타입은 Number <br>
+Number.parseFloat(num) = 실수로 변환하는 함수 / 반환타입은 Number <br>
+
+@`확인`
+Number.isInteger(num) = 정수인지 판별하는 함수 / 반환값은 Boolean(true, false) <br>
+Number.isNaN(num) = NaN인지 판별하는 함수 / 반환값은 Boolean(true, false) <br>
 
 <hr>
 
@@ -843,37 +770,131 @@ arr.reduce((total, val) => (total > val ? total : val));
 ```
 <hr>
 
-## 템플릿 리터럴(Template literals)
-템플릿 리터럴 = 내장된 표현식을 허용하는 문자열 리터럴
+## 객체 리터럴
 
-### 개행
+### 객체
+@`객체(object)` = 프로퍼티의 집합 <br>
+@`프로퍼티(property)` = 키와 값으로 구성된 객체가 가지고있는 속성 <br>
+@`키(key)` = 속성명 // 문자열형태의 이름 <br>
+@`값(value)`= 속성값 // 문자열,숫자,배열,객체,함수 등 <br>
+@`메소드(method)` = 객체의 속성 값으로 담겨진 함수
+
 ```javascript
-let text = "hello\nWorld";
-=
-let text = `hello
-World`;
+// 객체 예시
+let info = {
+  age: 20, // 숫자
+  name: "JS", // 문자
+  weight: "50kg", // 숫자+문자
+  interests: ["music", "movie"], // 배열
+  desc: function () { // 함수(메소드)
+    return "description";
+  },
+};
 ```
 
-### 표현식사용
+### 객체프로퍼티 참조방식
+@`점표기법` = 객체이름.프로퍼티 이름
 ```javascript
-let text = "hello World";
-let textType = typeof text;
-console.log(`${text} 타입은 ?? ${textType}`);
+console.log(info.age); // 20
+```
+@`대괄호표기법` = 객체이름["프로퍼티 이름"] 
+```javascript
+console.log(info["name"]); // JS
+```
+### 객체 메소드 참조방식
+점표기법으로만 접근가능 대괄호표기법 사용불가
+```javascript
+// 객체이름.메소드 이름()
+console.log(info.desc()); // description
+```
+
+### 프로퍼티(property)열거
+- 객체 순회
+- 순서 미보장
+- length, index없음
+- Object.key(), for-in문, Object.values(), Object.entries()
+
+```javascript
+// 참고용 공통 객체
+let info = {
+  age: 20, // 숫자
+  name: "JS", // 문자
+  weight: "50kg", // 숫자+문자
+  interests: ["music", "movie"], // 배열
+  desc: function () { // 함수(메소드)
+    return "description";
+  },
+};
+```
+Object.key() = 객체에서 key를 배열로 반환
+```javascript
+console.log(Object.keys(info)); // [ 'age', 'name', 'weight', 'interests', 'desc' ]
+```
+Object.values() = 객체에서 value를 배열로 반환
+```javascript
+console.log(Object.values(info)); // [ 20, 'JS', '50kg', [ 'music', 'movie' ], [Function: desc] ]
+```
+Object.entries() = 객체에서 key와 value를 배열로 반환 (key,value를 대괄호로 묶어서 배열로반환)
+```javascript
+console.log(Object.entries(info)); 
+/** 
+[
+  [ 'age', 20 ],
+  [ 'name', 'JS' ],
+  [ 'weight', '50kg' ],
+  [ 'interests', [ 'music', 'movie' ] ],
+  [ 'desc', [Function: desc] ]
+]
+*/
+```
+for-in문 = 객체의 프로퍼티를 순회하는 반복문
+```javascript
+for (let i in info) {
+  console.log(i);
+}
+/**
+age
+name
+weight
+interests
+desc
+ */
+```
+```javascript
+for (let i in info) {
+  console.log(info[i]);
+}
+/**
+20
+JS
+50kg
+[ 'music', 'movie' ]
+[Function: desc]
+ */
+```
+### 프로퍼티 조작
+#### 값 재할당 
+```javascript
+// 객체변수.키 = 재할당값
+info.age = 30;
+console.log(info["age"]); // 30
+```
+#### 프로퍼티 추가
+```javascript
+info.height = "180cm";
+console.log(info["height"]); // 180cm / 점표기법도 동일
+```
+#### 프로퍼티 삭제
+```javascript
+delete info["height"];
+console.log(info["height"]); // undefined
 ```
 
 <hr>
 
-### 변환,확인
+💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥
+## DOM
 
-@`변환`
-Number.parseInt(num) = 정수로 변환하는 함수 / 반환타입은 Number <br>
-Number.parseFloat(num) = 실수로 변환하는 함수 / 반환타입은 Number <br>
-
-@`확인`
-Number.isInteger(num) = 정수인지 판별하는 함수 / 반환값은 Boolean(true, false) <br>
-Number.isNaN(num) = NaN인지 판별하는 함수 / 반환값은 Boolean(true, false) <br>
-
-<hr>
 
 ## 동기와 비동기
  
