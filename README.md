@@ -154,17 +154,84 @@ let info = {
 ```
 
 ### 객체프로퍼티 참조방식
+@`점표기법` = 객체이름.프로퍼티 이름
 ```javascript
-//객체이름.프로퍼티 이름 <br>
 console.log(info.age); // 20
-
-//객체이름["프로퍼티 이름"] <br>
+```
+@`대괄호표기법` = 객체이름["프로퍼티 이름"] 
+```javascript
 console.log(info["name"]); // JS
 ```
 ### 객체 메소드 참조방식
+점표기법으로만 접근가능 대괄호표기법 사용불가
 ```javascript
 // 객체이름.메소드 이름()
 console.log(info.desc()); // description
+```
+💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥
+### 프로퍼티(property)열거
+- 객체 순회
+- 순서 미보장
+- length, index없음
+- Object.key(), for-in문, Object.values(), Object.entries()
+
+```javascript
+// 참고용 공통 객체
+let info = {
+  age: 20, // 숫자
+  name: "JS", // 문자
+  weight: "50kg", // 숫자+문자
+  interests: ["music", "movie"], // 배열
+  desc: function () { // 함수(메소드)
+    return "description";
+  },
+};
+```
+Object.key() = 객체에서 key를 배열로 반환
+```javascript
+console.log(Object.keys(info)); // [ 'age', 'name', 'weight', 'interests', 'desc' ]
+```
+Object.values() = 객체에서 value를 배열로 반환
+```javascript
+console.log(Object.values(info)); // [ 20, 'JS', '50kg', [ 'music', 'movie' ], [Function: desc] ]
+```
+Object.entries() = 객체에서 key와 value를 배열로 반환 (key,value를 대괄호로 묶어서 배열로반환)
+```javascript
+console.log(Object.entries(info)); 
+/** 
+[
+  [ 'age', 20 ],
+  [ 'name', 'JS' ],
+  [ 'weight', '50kg' ],
+  [ 'interests', [ 'music', 'movie' ] ],
+  [ 'desc', [Function: desc] ]
+]
+*/
+```
+for-in문 = 객체의 프로퍼티를 순회하는 반복문
+```javascript
+for (let i in info) {
+  console.log(i);
+}
+/**
+age
+name
+weight
+interests
+desc
+ */
+```
+```javascript
+for (let i in info) {
+  console.log(info[i]);
+}
+/**
+20
+JS
+50kg
+[ 'music', 'movie' ]
+[Function: desc]
+ */
 ```
 <hr>
 
