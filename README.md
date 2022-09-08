@@ -349,6 +349,16 @@ BigInt연산
 * +,*,-,**,%를 이용해서 연산가능
 * BigInt 객체를 이용
 
+### 변환,확인
+
+@`변환`
+Number.parseInt(num) = 정수로 변환하는 함수 / 반환타입은 Number <br>
+Number.parseFloat(num) = 실수로 변환하는 함수 / 반환타입은 Number <br>
+
+@`확인`
+Number.isInteger(num) = 정수인지 판별하는 함수 / 반환값은 Boolean(true, false) <br>
+Number.isNaN(num) = NaN인지 판별하는 함수 / 반환값은 Boolean(true, false) <br>
+
 <hr>
 
 ## 문자열
@@ -483,8 +493,9 @@ let str = arr.join(); // H,e,l,l,o,w
 <hr>
 
 ## 템플릿 리터럴(Template literals)
-템플릿 리터럴 = 내장된 표현식을 허용하는 문자열 리터럴
-
+템플릿 리터럴 = 내장된 표현식을 허용하는 문자열 리터럴 <br>
+기존따옴표방식은 줄바꿈이 허용되지않지만 백틱과 ${}를 이용해서 개행, 빈여백등 보다 편리하게 표현할수있다 <br>
+ 
 ### 개행
 ```javascript
 let text = "hello\nWorld";
@@ -499,16 +510,6 @@ let text = "hello World";
 let textType = typeof text;
 console.log(`${text} 타입은 ?? ${textType}`);
 ```
-
-### 변환,확인
-
-@`변환`
-Number.parseInt(num) = 정수로 변환하는 함수 / 반환타입은 Number <br>
-Number.parseFloat(num) = 실수로 변환하는 함수 / 반환타입은 Number <br>
-
-@`확인`
-Number.isInteger(num) = 정수인지 판별하는 함수 / 반환값은 Boolean(true, false) <br>
-Number.isNaN(num) = NaN인지 판별하는 함수 / 반환값은 Boolean(true, false) <br>
 
 <hr>
 
@@ -655,6 +656,18 @@ function WhatIsMean(parameter1,parameter2) {
 WhatIsMean(argument1,argument2)
 ```
 
+@`rest parameter` = 매개변수 이름앞에 세개의점을 붙여서 정의한 매개변수를 의미 <br>
+앞에 정의된 매개변수 이후 전달되는 인수들을 모두 배열로 묶어서 전달받는다
+```javascript
+function test(A, ...rest) {
+  console.log(A);
+  console.log(rest);
+}
+test(1, 2, 3, 4); 
+// 1
+// [ 2, 3, 4 ]
+```
+
 ### 화살표 함수(arrow function) 
 @`화살표 함수` = 간결하게 일부를 생략한 함수작성방법 
 ```javascript
@@ -770,27 +783,33 @@ arr.reduce((total, val) => (total > val ? total : val));
 ```
 <hr>
 
-## 객체 리터럴
-
-### 객체
+## 객체
 @`객체(object)` = 프로퍼티의 집합 <br>
 @`프로퍼티(property)` = 키와 값으로 구성된 객체가 가지고있는 속성 <br>
 @`키(key)` = 속성명 // 문자열형태의 이름 <br>
 @`값(value)`= 속성값 // 문자열,숫자,배열,객체,함수 등 <br>
 @`메소드(method)` = 객체의 속성 값으로 담겨진 함수
 
+### 객체생성
+
+#### 객체리터럴
+{}를 이용하여 변수처럼 선언하는 방법
 ```javascript
-// 객체 예시
 let info = {
-  age: 20, // 숫자
-  name: "JS", // 문자
-  weight: "50kg", // 숫자+문자
-  interests: ["music", "movie"], // 배열
-  desc: function () { // 함수(메소드)
-    return "description";
-  },
+  age: 20, 
+  name: "JS"
 };
 ```
+#### 생성자함수
+객체 생성자 함수를 이용한 선언방법
+```javascript
+let info = new Object();
+info.age = 20;
+info.name = "JS";
+```
+#### Object.create()
+이해가 부족한관계로 더공부한뒤 정리할것 <br>
+https://hyojin96.tistory.com/entry/Objectcreate
 
 ### 객체프로퍼티 참조방식
 @`점표기법` = 객체이름.프로퍼티 이름
