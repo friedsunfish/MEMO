@@ -61,8 +61,6 @@ OS(Window, Mac)에 의존적 , 코드 변경 시 재 컴파일 필요 <br>
 선언방식 = 데이터종류+변수이름+세미콜론 <br>
 변수종류 = var(가변형 변수) , let(가변형 블록 지역변수) , const(불변형 블록 지역변수) <br>
 
-+여기에 차후 let var, 호이스팅,스코프 꼬리에 연결하면 좋을거같다 <br>
-
 <hr>
 
 ## 값(Value)와 참조(Reference)
@@ -783,7 +781,7 @@ arr.reduce((total, val) => (total > val ? total : val));
 ```
 
 ### IIFE(Immediately Invoked Function Expression)
-@`IIFE(Immediately Invoked Function Expression)` = 즉시실행되는 함수 표현식 약자 <br>
+@`IIFE` = 즉시실행되는 함수 표현식 약자 <br>
 사용이유 = 불필요한 변수및함수생성x / Scope충돌x / 한번만호출하는 코드의경우 사용 <br>
 ```javascript
 // IIFE 표현식 = 함수리터럴을 ()로 감싼형태
@@ -921,6 +919,31 @@ console.log(info["height"]); // undefined
 
 <hr>
 
+## 스코프(Scope)
+
+@`스코프` = 유효범위 
+
+- @`전역 스코프(global Scope)` = 어디서든 참조가능
+  -@`전역변수(global Variable)` = 어디서든 참조가능한 변수
+  
+- @`지역스코프(local scope)` = 함수내에서만 참조가능
+  - @`함수 레벨 스코프(function-level scope)` = 함수안에서만 접근 가능 = 함수내선언변수
+  - @`블록 레벨 스코프(block-level scope)` = 블록내에서만 접근 가능 = 블록({ })내선언변수
+  - @`지역변수(local Variable)` = 특정부분에서만 참조가능한 변수
+
+### 호이스팅(Hoisting)
+@`호이스팅(Hoisting)` = 선언한코드를 내부적으로 최상단으로 끌어올림 
+
+var의경우 선언과 초기화가 동시에 이루어지기때문에 최상단으로 올려졌을때 할당만되지않은상태 (undefined)인상태임 <br>
+let , const는 선언 - 초기화 -할당을 순차적으로 진행하는데 호이스팅에의해서 선언후 초기화되지않고 상단으로 올려짐 <br>
+초기화도되지않았기때문에 undefined도 반환조차못하고 에러발생 이때 선언후 초기화까지의 범위를 TDZ라고함 <br>
+
+### TDZ(Temporal Dead Zone)
+@`TDZ` = 변수 선언 및 초기화 하기 전 사이의 사각지대
+변수를 선언 및 초기화 하기전에 사용하게 되면 TDZ 상태에서 사용하는 것 = ReferenceError <br>
+
+<hr>
+
 ## DOM
 Element = HTML 태그 , 노드타입 <br>
 Attr = 속성 <br>
@@ -972,11 +995,7 @@ textContent는 그냥 내용을 다긁어오는 느낌 (태그인식못함) <br>
 - appendChild(node)
 
 <hr>
-💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥
 
-
-
-<hr>
 ## 동기와 비동기
  
 동기 = 동시에일어나는 = 요청과 동시에 결과가 동시에 일어남  <br>
@@ -1054,6 +1073,8 @@ sum2(10,20);
 ```
 
 <hr>
+
+💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥 <br>
 <hr>
 <hr>
 <hr>
