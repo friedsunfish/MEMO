@@ -781,6 +781,16 @@ arr.reduce(function (total, val) {
 //화살표함수
 arr.reduce((total, val) => (total > val ? total : val));
 ```
+
+### IIFE(Immediately Invoked Function Expression)
+@`IIFE(Immediately Invoked Function Expression)` = 즉시실행되는 함수 표현식 약자 <br>
+사용이유 = 불필요한 변수및함수생성x / Scope충돌x / 한번만호출하는 코드의경우 사용 <br>
+```javascript
+// IIFE 표현식 = 함수리터럴을 ()로 감싼형태
+(function(){
+  //구문
+})();
+```
 <hr>
 
 ## 객체
@@ -911,10 +921,62 @@ console.log(info["height"]); // undefined
 
 <hr>
 
-💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥
 ## DOM
+Element = HTML 태그 , 노드타입 <br>
+Attr = 속성 <br>
+
+### Element 속성및함수
+Id = Id속성 / tagName = 태그 이름 / innerHtml = 태그 내용물 / style = 스타일 <br>
+- setAttribute(name,value) = 속성 변경하기
+- getAttribute(name) = 속성찾기
+- getAttributeNode(name) = 속성노드찾기
+- getElementsByTagName(name) = 태그이름명으로 모든자식찾기
+- hasAttribute(name) = 속성존재여부확인
+- removeAttribute(name) = 속성삭제
+
+### Attr 속성 및 함수
+- name = 태그이름
+- value = 태그내용물
+- isId = Id속성
+- setNamedItem(name) = 추가 또는 변경
+- getNamedItem(name) = 속성 읽기
+- removeNamedItem(name)(삭제)
+
+### DOM활용(찾기,읽기)
+- getElementById(id) = ID를 이용하여 찾기
+- getElementsByName(name) = Name을 이용하여 찾기
+- getElementsByClassName(ClassName) = Class를 이용하여 찾기
+- getElementsByTagName(name) = 태그이름을 이용하여 찾기
+
+Node.textContent = 요소의 텍스트 콘텐츠를 가져오기 or 텍스트 내용을 설정 <br>
+```javascript
+const source = document.getElementById('source'); 
+textContentOutput.innerHTML = source.textContent; 
+```
+HTMLElement.innerText = 요소와 그 자손의 렌더링 된 텍스트 콘텐츠를 나타냄 <br>
+```javascript
+const source = document.getElementById('source'); 
+innerTextOutput.innerHTML = source.innerText; 
+```
+
+### .textContent, .innerText 차이 
+innerText는 텍스트의 렌더링 후 모습을 인식해서 \<br>,숨겨진요소가 표현된 실제로 보여지는 결과값을 가져오고 <br>
+textContent는 그냥 내용을 다긁어오는 느낌 (태그인식못함) <br>
+[비교 예시] https://developer.mozilla.org/ko/docs/Web/API/HTMLElement/innerText
+
+### DOM활용(노드추가)
+- createElement(name)
+- createTextNode(text)
+- createAttribute(name)
+- createComment(text)
+- appendChild(node)
+
+<hr>
+💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥
 
 
+
+<hr>
 ## 동기와 비동기
  
 동기 = 동시에일어나는 = 요청과 동시에 결과가 동시에 일어남  <br>
